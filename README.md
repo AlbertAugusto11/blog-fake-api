@@ -1,6 +1,6 @@
 Uma fake API para uma aplicação de notícias
 
-Base URL: https://recipe-fake-api.onrender.com
+Base URL: https://blog-fake-api.onrender.com
 
 ## ROTAS
 
