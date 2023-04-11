@@ -41,6 +41,39 @@ Padrão de resposta:
 ]
 ```
 
+### Notícias /news POST (Requer autorização)
+
+Headers
+
+```json
+{
+   'Authorization': 'Bearer token'
+}
+```
+
+Padrão de corpo
+
+```json
+{ 
+   "category": "economia",
+   "title": "Imposto de Renda 2023: como declarar planos de previdência PGBL e VGBL.",
+   "content": "Contribuições feitas para o PGBL são dedutíveis da base de cálculo do IR 2023 em até 12% da renda bruta tributável anual. Já o VGBL não permite o desconto.",
+   "author": "Isabela Bolzani"
+}
+```
+
+Padrão de resposta
+
+```json
+{
+   "id": 1,
+   "category": "economia",
+   "title": "Imposto de Renda 2023: como declarar planos de previdência PGBL e VGBL.",
+   "content": "Contribuições feitas para o PGBL são dedutíveis da base de cálculo do IR 2023 em até 12% da renda bruta tributável anual. Já o VGBL não permite o desconto.",
+   "author": "Isabela Bolzani"
+}
+```
+
 ### Categorias /categories GET
 
 Padrão de resposta:
@@ -63,4 +96,51 @@ Padrão de resposta:
     "label": "Mundo"
   }
 ]
+```
+
+### Usuário (Cadastrar) /users POST 
+
+Padrão de corpo
+
+```json
+{
+   "name": "John Doe",
+   "email": "johndoe@email.com",
+   "password": "123456"
+}
+```
+
+Padrão de resposta
+
+```json
+{
+	"accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5kb2VAZW1haWwuY29tIiwiaWF0IjoxNjgxMjI2MzU1LCJleHAiOjE2ODEyMjk5NTUsInN1YiI6IjIifQ.HoHzAjg6luV9k6v8zHyewSTHsUnAKDBIbFiIS0r_joM",
+	"user": {
+		"email": "johndoe@email.com",
+		"name": "John Doe",
+		"id": 1
+	}
+}
+```
+
+### Usuário (Login) /login POST 
+
+```json
+{
+   "email": "johndoe@email.com",
+   "password": "123456"
+}
+```
+
+Padrão de resposta
+
+```json
+{
+	"accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5kb2VAZW1haWwuY29tIiwiaWF0IjoxNjgxMjI2MzU1LCJleHAiOjE2ODEyMjk5NTUsInN1YiI6IjIifQ.HoHzAjg6luV9k6v8zHyewSTHsUnAKDBIbFiIS0r_joM",
+	"user": {
+		"email": "johndoe@email.com",
+		"name": "John Doe",
+		"id": 1
+	}
+}
 ```
