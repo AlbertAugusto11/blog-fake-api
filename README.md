@@ -62,15 +62,14 @@ Padrão de corpo
 }
 ```
 
-Padrão de resposta
+
+### Notícias /news/:newId DELETE (Requer autorização)
+
+Headers
 
 ```json
 {
-   "id": 1,
-   "category": "economia",
-   "title": "Imposto de Renda 2023: como declarar planos de previdência PGBL e VGBL.",
-   "content": "Contribuições feitas para o PGBL são dedutíveis da base de cálculo do IR 2023 em até 12% da renda bruta tributável anual. Já o VGBL não permite o desconto.",
-   "author": "Isabela Bolzani"
+   'Authorization': 'Bearer token'
 }
 ```
 
