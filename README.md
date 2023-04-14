@@ -105,7 +105,8 @@ Padrão de corpo
 {
    "name": "John Doe",
    "email": "johndoe@email.com",
-   "password": "123456"
+   "password": "123456",
+   "job": "Jornalista"
 }
 ```
 
@@ -117,7 +118,8 @@ Padrão de resposta
 	"user": {
 		"email": "johndoe@email.com",
 		"name": "John Doe",
-		"id": 1
+		"id": 1,
+		"job": "Jornalista"
 	}
 }
 ```
@@ -128,6 +130,7 @@ Padrão de resposta
 {
    "email": "johndoe@email.com",
    "password": "123456"
+   "job": "Jornalista",
 }
 ```
 
@@ -139,6 +142,7 @@ Padrão de resposta
 	"user": {
 		"email": "johndoe@email.com",
 		"name": "John Doe",
+		"job": "Jornalista",
 		"id": 1
 	}
 }
