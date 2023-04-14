@@ -130,7 +130,6 @@ Padrão de resposta
 {
    "email": "johndoe@email.com",
    "password": "123456"
-   "job": "Jornalista",
 }
 ```
 
