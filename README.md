@@ -26,9 +26,9 @@ Padrão de resposta:
    },
    {
       "id": 3,
-      "category": "mundo",
-      "title": "Chão, que tapava um poço, cedeu, e 25 pessoas caíram, segundo autoridades. Caso aconteceu em Indore, no centro do país, que celebra esta semana um festival hindu.",
-      "content": "Piso de templo desaba na Índia e deixa 13 mortos; veja vídeo.",
+      "category": "mundo",     
+      "title": "Piso de templo desaba na Índia e deixa 13 mortos; veja vídeo.",
+      "content": "Chão, que tapava um poço, cedeu, e 25 pessoas caíram, segundo autoridades. Caso aconteceu em Indore, no centro do país, que celebra esta semana um festival hindu.",
       "author": "France Presse"
    },
    {
