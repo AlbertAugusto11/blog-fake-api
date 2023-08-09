@@ -62,6 +62,29 @@ Padrão de corpo
 }
 ```
 
+### Notícias /news/:newId PATCH (Requer autorização)
+
+Headers
+
+```json
+{
+   'Authorization': 'Bearer token'
+}
+```
+
+Padrão de corpo
+
+```json
+{ 
+   "category": "economia",
+   "title": "Imposto de Renda 2023: como declarar planos de previdência PGBL e VGBL.",
+   "content": "Contribuições feitas para o PGBL são dedutíveis da base de cálculo do IR 2023 em até 12% da renda bruta tributável anual. Já o VGBL não permite o desconto.",
+   "author": "Isabela Bolzani"
+}
+```
+
+Por se tratar de uma rota de patch nem todos as chaves são obrigatórias.
+
 
 ### Notícias /news/:newId DELETE (Requer autorização)
 
