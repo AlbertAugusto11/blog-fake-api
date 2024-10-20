@@ -8,7 +8,7 @@ function App() {
   const localMode = localStorage.getItem("modeDark")
   console.log(localMode)
   
-  const [mode,setMode] = useState(localMode ? localMode : false)
+  const [mode,setMode] = useState(localMode == true ? localMode : false)
   
   const modeDarkF = () =>{
     setMode(!mode)
