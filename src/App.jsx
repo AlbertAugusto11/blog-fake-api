@@ -5,7 +5,10 @@ import "./app.scss"
 
 
 function App() {
-  const [mode,setMode] = useState(false)
+  const localMode = localStorage.getItem("modeDark")
+  console.log(localMode)
+  
+  const [mode,setMode] = useState(localMode ? localMode : false)
   
   const modeDarkF = () =>{
     setMode(!mode)
