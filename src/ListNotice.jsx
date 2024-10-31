@@ -1,17 +1,37 @@
 // https://github.com/Kenzie-Academy-Brasil-Developers/blog-fake-api - repositorio do trabalho
 
 import { useEffect, useState } from "react"
+import { api } from "./service/api"
 
 export const ListNotice = () =>{
     const [notice,setNotice] = useState([])
+    const [loading, setLoading] = useState(false)
+    
+    // useEffect(() => {
+    //     const getNotice = async () => {
+    //         setLoading(true)
+    //         const response = await fetch("https://blog-fake-api.onrender.com/news");
+    //         const json = await response.json();
+    //         setNotice(json)
+    //     }
+    //     getNotice()
+    //     setLoading(false)
+    // },[])
+
     useEffect(() => {
         const getNotice = async () => {
-            const response = await fetch("https://blog-fake-api.onrender.com/news");
-            const json = await response.json();
-            setNotice(json)
+            try{
+                setLoading(true)
+                const {data} = await api.get(`/news`)
+                setNotice(data)
+            }catch(error){
+                console.log(error)
+            }finally{
+                setLoading(false)
+            }
         }
         getNotice()
-    },[])
+    },[])  // com axios completo
 
     const delNotice = (id) =>{
         let x = notice.filter(element =>{
@@ -20,8 +40,8 @@ export const ListNotice = () =>{
         setNotice(x)
     }
     return(
-        <>
-            <ul>
+        <div>
+            {loading ? <p>EM CARREGAMENTO ...</p> : <ul>
                 {notice.map(element =>{
                     return(
                         <li key={element.id}>
@@ -33,9 +53,8 @@ export const ListNotice = () =>{
                         </li>
                     )
                 })}
-            </ul>
-            <button onClick={() => saveLocalStorage()}>SALVER NO LOCALSTORAGE</button>
-        </>
+            </ul>}
+        </div>
     )
 }
 export default ListNotice

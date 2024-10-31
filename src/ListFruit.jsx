@@ -1,16 +1,33 @@
 import { useState, useEffect } from "react"
+import { api2 } from "./service/api"
 
 export const ListFruit = () =>{
     const [fruit,setFruit] = useState([])
-    useEffect(() =>{
-        const getNotice = async () => {
-            const response = await fetch("https://fruit-fake-api.onrender.com/fruits");
-            const json = await response.json();
-            setFruit(json)
+    const[loading, setLoading] = useState(false)
+
+    // useEffect(() =>{
+    //     const getFruit = async () => {
+    //         const response = await fetch("https://fruit-fake-api.onrender.com/fruits");
+    //         const json = await response.json();
+    //         setFruit(json)
+    //     }
+    //     getFruit()
+    // },[])
+
+    useEffect(() => {
+        const getFruit = async () => {
+            try{
+                setLoading(true)
+                const {data} = await api2.get(`/fruits`)
+                setFruit(data)
+            }catch(error){
+                console.log(error)
+            }finally{
+                setLoading(false)
+            }
         }
-        getNotice()
-        console.log("MONTOU FRUTAS")
-    },[])
+        getFruit()
+    },[])  // com axios completo
 
     const delFruit = (id) =>{
         let x = fruit.filter(element =>{
@@ -29,9 +46,9 @@ export const ListFruit = () =>{
     }
 
     return(
-        <>
+        <div>
             <button onClick={addFruit}>Add Nova Fruta</button>
-            <ul>
+            {loading ? <p>EM CARREGAMENTO ...</p> : <ul>
                 {fruit.map(element =>{
                     return(
                         <li key={element.id}>
@@ -42,9 +59,9 @@ export const ListFruit = () =>{
                         </li>
                     )
                 })}
-            </ul>
+            </ul>}
             <button onClick={() =>console.log(fruit)}>CONSOLE LOG FRUIT</button>
-        </>
+        </div>
     )
     
 }
