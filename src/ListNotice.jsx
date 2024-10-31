@@ -1,7 +1,7 @@
 // https://github.com/Kenzie-Academy-Brasil-Developers/blog-fake-api - repositorio do trabalho
 
 import { useEffect, useState } from "react"
-import { api } from "./service/api"
+import { apiNews } from "./service/api"
 
 export const ListNotice = () =>{
     const [notice,setNotice] = useState([])
@@ -22,7 +22,7 @@ export const ListNotice = () =>{
         const getNotice = async () => {
             try{
                 setLoading(true)
-                const {data} = await api.get(`/news`)
+                const {data} = await apiNews.get(`/news`)
                 setNotice(data)
             }catch(error){
                 console.log(error)

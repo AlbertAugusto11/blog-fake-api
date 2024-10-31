@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { api2 } from "./service/api"
+import { apiFruit } from "./service/api"
 
 export const ListFruit = () =>{
     const [fruit,setFruit] = useState([])
@@ -18,7 +18,7 @@ export const ListFruit = () =>{
         const getFruit = async () => {
             try{
                 setLoading(true)
-                const {data} = await api2.get(`/fruits`)
+                const {data} = await apiFruit.get(`/fruits`)
                 setFruit(data)
             }catch(error){
                 console.log(error)
