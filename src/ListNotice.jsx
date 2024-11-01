@@ -41,7 +41,7 @@ export const ListNotice = () =>{
     }
     return(
         <div>
-            {loading ? <p>LISTA DE NOTICIAS - EM CARREGAMENTO ...</p> : <ul>
+            {loading ? <p>LISTA DE FRUTAS - EM CARREGAMENTO, AGUARDE UM MOMENTO ...</p> : <ul>
                 <h1>BEM VINDO AO NOSSO PORTAL DE NOTICIAS</h1>
                 {notice.map(element =>{
                     return(

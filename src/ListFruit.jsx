@@ -48,7 +48,7 @@ export const ListFruit = () =>{
     return(
         <div className="div__main">
             <h1>BEM VINDO AO NOSSO HORTFRUIT</h1>
-            {loading ? <p>LISTA DE FRUTAS - EM CARREGAMENTO ...</p> : <ul>
+            {loading ? <p>LISTA DE FRUTAS - EM CARREGAMENTO, AGUARDE UM MOMENTO ...</p> : <ul>
                 {fruit.map(element =>{
                     return(
                         <li key={element.id}>
