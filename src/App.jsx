@@ -22,7 +22,7 @@ function App() {
 
   return(
     <div className={mode == false ? "div__1" : "div__2"}>
-      <button onClick={() => modeDarkF()}>MODO ESCUCO</button>
+      <button onClick={() => modeDarkF()}>{mode == false ? "IR AO TEMA ESCURO" : "IR AO TEMA CLARO"}</button>
       <ListFruit />
       <ListNotice />
     </div>

@@ -46,9 +46,9 @@ export const ListFruit = () =>{
     }
 
     return(
-        <div>
-            <button onClick={addFruit}>Add Nova Fruta</button>
-            {loading ? <p>EM CARREGAMENTO ...</p> : <ul>
+        <div className="div__main">
+            <h1>BEM VINDO AO NOSSO HORTFRUIT</h1>
+            {loading ? <p>LISTA DE FRUTAS - EM CARREGAMENTO ...</p> : <ul>
                 {fruit.map(element =>{
                     return(
                         <li key={element.id}>
@@ -60,7 +60,7 @@ export const ListFruit = () =>{
                     )
                 })}
             </ul>}
-            <button onClick={() =>console.log(fruit)}>CONSOLE LOG FRUIT</button>
+            <button onClick={addFruit}>Add Nova Fruta</button>
         </div>
     )
     
